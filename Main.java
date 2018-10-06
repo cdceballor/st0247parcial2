@@ -11,7 +11,7 @@ public class Main {
 	public static void main(String[]args) throws Exception {
 		List<Tortuga> list;
 	 
-
+// Donde se lee la entrada de las tortugas
 	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
        list = new ArrayList<Tortuga>();
     String strLine;
@@ -21,7 +21,7 @@ public class Main {
         int f = Integer.parseInt(str[1]) - p;
         list.add(new Tortuga(p, f));
     }
-
+    // Aqui se encarga de Comparar si se pueden o no se pueden alinear las tortugas, y cuantas se pueden alinear
 	Collections.sort(list);
     int[][] stack = new int[list.size()][list.size() + 1];
     for (int i = 0; i < list.size(); i++)
@@ -43,10 +43,13 @@ public class Main {
     		break;
         }
     }
+    //Imprime la cantidad de tortugas que se pueden apilar
     System.out.println(result);
    
 
  }
+	
+	//Clase encargada de almacenar los datos de las tortugas
 public static class Tortuga implements Comparable<Tortuga>{
 	 public int peso, fuerza;
 	 
